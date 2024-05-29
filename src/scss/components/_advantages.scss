@@ -1,0 +1,54 @@
+.advantages {
+    margin: 95px 0 120px;
+
+    @include tablet {
+        margin-bottom: 90px;
+    }
+
+    @include mobile {
+        margin: 100px 0;
+    }
+
+    .title {
+        margin-bottom: 72px;
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 92px;
+        grid-template-columns: repeat(3, 308px);
+        justify-content: center;
+
+        @include tablet {
+            gap: 0 20px;
+            grid-template-columns: repeat(3, 240px);
+        }
+
+        @include mobile {
+            gap: 60px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item {
+        @include flex-v-center;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
+    }
+
+    &__picture {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

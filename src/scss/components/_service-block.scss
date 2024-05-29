@@ -1,0 +1,186 @@
+.service-block {
+    .title {
+        max-width: 572px;
+        text-align: left;
+
+        @include tablet {
+            max-width: 636px;
+        }
+
+        @include mobile {
+            max-width: none;
+        }
+
+        &__text {
+            display: inline-flex;
+            position: relative;
+            width: max-content;
+
+            &::before {
+                @include absolute(-20px, -45px);
+                @include size(52px, 70px);
+                background: {
+                    image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='70' viewBox='0 0 52 70' fill='none'%3E%3Cpath d='M8.79473 31.555C2.94356 30.1686 -1.66043 10.0384 6.23813 4.0375C10.3953 0.862406 18.3873 1.3916 21.3597 5.69914C23.5629 8.87424 22.2846 13.2135 21.3597 16.3569C19.2083 23.6279 13.1078 32.571 8.79473 31.555Z' stroke='%239DD162' stroke-width='3' stroke-miterlimit='10'/%3E%3Cpath d='M20.1957 37.2384C17.0778 31.2058 29.6324 12.896 40.2019 15.6795C46.5519 17.3518 51.5301 26.4537 49.5555 32.497C46.1154 42.6044 23.3863 43.4299 20.1957 37.2384Z' stroke='%239DD162' stroke-width='3' stroke-miterlimit='10'/%3E%3Cpath d='M19.5247 48.4703C22.5802 43.7712 43.792 48.4703 45.1223 57.0007C45.8186 61.4564 41.1314 66.9705 36.2779 67.9019C26.4775 69.7752 16.7082 52.8202 19.5247 48.4703Z' stroke='%239DD162' stroke-width='3' stroke-miterlimit='10'/%3E%3C/svg%3E");
+                    repeat: no-repeat;
+                };
+                content: '';
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+
+        &::before {
+            @include absolute(120px, -30px);
+            @include size(35px);
+            background-color: var(--color-pink);
+            border-radius: 50%;
+            content: '';
+
+            @include tablet {
+                content: none;
+            }
+        }
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border-radius: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+
+        @include tablet {
+            grid-template-columns: auto;
+            padding: 52px;
+        }
+
+        @include mobile {
+            padding: 24px;
+        }
+
+        &::after {
+            @include absolute(50%, null, null, 50%);
+            @include size(94%, 1px);
+            border-radius: 4px;
+            background-color: rgba(#AFB2B2, 0.4);
+            content: '';
+            transform: translate(-50%, -50%);
+
+            @include tablet {
+                content: none;
+            }
+        }
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(1px, 90%);
+            border-radius: 4px;
+            background-color: rgba(#AFB2B2, 0.4);
+            content: '';
+            transform: translate(-50%, -50%);
+
+            @include tablet {
+                content: none;
+            }
+        }
+    }
+
+    &__item {
+        padding: 52px 72px;
+        position: relative;
+
+        @include tablet {
+            display: flex;
+            margin: 0 auto;
+            padding: 52px 0;
+            width: 664px;
+
+            &::before {
+                @include absolute(null, null, 0, 0);
+                @include size(100%, 1px);
+                background-color: var(--color-light-grey);
+                border-radius: 4px;
+                content: '';
+            }
+        }
+
+        @include mobile {
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 32px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        &:first-child {
+            @include tablet {
+                padding-top: 0;
+            }
+        }
+
+        &:last-child {
+            @include tablet {
+                padding-bottom: 0;
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &__picture {
+        @include size(127px);
+        @include flex-all-center;
+        margin-bottom: 24px;
+
+        @include tablet {
+            @include size(188px);
+            margin: 0 24px 0 0;
+        }
+
+        @include mobile {
+            @include size(127px);
+            margin: 0 0 24px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 18px;
+    }
+
+    &__category {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-grey);
+        line-height: 21px;
+        margin-bottom: 24px;
+    }
+
+    &__buttons {
+        @include flex-v-center;
+        gap: 0 40px;
+
+        @include mobile {
+            justify-content: center;
+            width: 100%;
+        }
+
+        @include sm-mobile {
+            flex-direction: column;
+            gap: 24px 0;
+        }
+
+        .is-custom {
+            color: var(--color-light-grey);
+        }
+
+        .btn {
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.banner {
+    &__wrapper {
+        align-items: center;
+        background-color: var(--color-yellow);
+        border-radius: 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px 0;
+        padding: 32px 40px;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 35px 20px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 42px, var(--fw-bold));
+        color: $color-black;
+        line-height: 56px;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 21px 50px;
+        width: 205px;
+
+        @include mobile {
+            height: 52px;
+            padding: 21px 38px;
+            width: max-content;
+        }
+    }
+}

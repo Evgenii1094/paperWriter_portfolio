@@ -1,0 +1,243 @@
+.about {
+    margin: 170px 0 160px;
+
+    @include tablet {
+        margin: 120px 0;
+    }
+
+    @include mobile {
+        margin: 250px 0 100px;
+    }
+
+    &.is-double {
+        margin-bottom: 110px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+        position: relative;
+        text-align: left;
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include mobile {
+            text-align: center;
+        }
+
+        &::before {
+            @include absolute(57px, 72px);
+            @include size(15px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Ccircle cx='7.5' cy='7.5' r='7.5' fill='%23FF99D0'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+
+            @include tablet {
+                right: 35px;
+                top: 30px;
+            }
+
+            @include mobile {
+                content: none;
+            }
+        }
+    }
+
+    &.is-double {
+        .title {
+            &::before {
+                @include size(37px);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='37' height='37' viewBox='0 0 37 37' fill='none'%3E%3Ccircle cx='18.5' cy='18.5' r='18.5' transform='matrix(-1 0 0 1 37 0)' fill='%23FF99D0'/%3E%3C/svg%3E");
+                right: -20px;
+                top: 10px;
+
+                @include tablet {
+                    @include size(20px);
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(-1 0 0 1 20 0)' fill='%23FF99D0'/%3E%3C/svg%3E");
+                    right: -65px;
+                    top: -27px;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 100px;
+        grid-template-columns: 428px 572px;
+        justify-content: center;
+
+        @include tablet {
+            gap: 0 65px;
+            grid-template-columns: 288px 372px;
+        }
+
+        @include mobile {
+            gap: 50px 0;
+            grid-template-columns: auto;
+        }
+
+        .is-double & {
+            grid-template-columns: 572px 428px;
+
+            @include tablet {
+                grid-template-columns: 372px 288px;
+            }
+
+            @include mobile {
+                gap: 50px 0;
+                grid-template-columns: auto;
+            }
+        }
+    }
+
+    &__content {
+        .is-double & {
+            @include mobile {
+                order: 2;
+            }
+        }
+    }
+
+    &__picture {
+        @include size(428px);
+        background-color: var(--color-bg);
+        border-radius: 28px;
+        box-shadow: 0px 0px 114px 0px rgba($color-black, 0.08) inset;
+        position: relative;
+
+        @include tablet {
+            @include size(288px);
+        }
+
+        @include mobile {
+            @include size(360px);
+            margin: 0 auto;
+        }
+
+        .is-double & {
+            @include mobile {
+                order: 1;
+            }
+        }
+
+        img {
+            @include absolute(null, null, 0, 50%);
+            transform: translateX(-50%);
+
+            @include tablet {
+                width: 240px;
+            }
+
+            @include mobile {
+                width: 327px;
+            }
+
+            .is-double & {
+                bottom: 28px;
+
+                @include tablet {
+                    bottom: 18px;
+                    width: 274px;
+                }
+
+                @include mobile {
+                    bottom: 50px;
+                    width: 320px;
+                }
+            }
+        }
+
+        &::after {
+            @include absolute(268px, null, null, -30px);
+            @include size(56px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56' fill='none'%3E%3Ccircle cx='28' cy='28' r='28' fill='%239DD162'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+
+            @include tablet {
+                @include absolute(-40px, null, null, -40px);
+                @include size(20px);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cellipse cx='10' cy='10.595' rx='10' ry='9.81013' fill='%239DD162'/%3E%3C/svg%3E");
+            }
+
+            @include mobile {
+                left: 10px;
+                top: -60px;
+            }
+
+            .is-double & {
+                content: none;
+            }
+        }
+
+        &::before {
+            @include absolute(null, -43px, -35px, null);
+            @include size(30px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3E%3Ccircle cx='15' cy='15' r='15' fill='%23FFBE18'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+
+            @include tablet {
+                @include absolute(null, -25px, -25px, null);
+                @include size(16px);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='16' viewBox='0 0 15 16' fill='none'%3E%3Cellipse cx='7.5' cy='8.30706' rx='7.5' ry='7.35759' fill='%23FFBE18'/%3E%3C/svg%3E");
+            }
+
+            @include mobile {
+                content: none;
+            }
+
+            .is-double & {
+                bottom: 55px;
+                right: -85px;
+
+                @include tablet {
+                    bottom: -40px;
+                    right: -10px;
+                }
+
+                @include mobile {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Ccircle cx='7.5' cy='7.5' r='7.5' transform='matrix(-1 0 0 1 15 0)' fill='%2320AFDE'/%3E%3C/svg%3E");
+                    content: '';
+                    right: 70px;
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 0 28px;
+
+        @include mobile {
+            justify-content: center;
+        }
+
+        @include mobile {
+            align-items: center;
+            flex-direction: column;
+            gap: 20px 0;
+        }
+
+        .btn {
+            @include tablet {
+                height: 52px;
+                padding: 21px 38px;
+            }
+
+            @include mobile {
+                height: 72px;
+                padding: 21px 60px;
+                width: 320px;
+            }
+        }
+    }
+}

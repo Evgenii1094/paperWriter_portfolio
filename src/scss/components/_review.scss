@@ -1,0 +1,200 @@
+.review {
+    margin: 120px 0 170px;
+    overflow: hidden;
+
+    @include mobile {
+        margin: 100px 0 250px;
+        overflow: visible;
+        padding: 0 20px;
+    }
+
+    .is-price-page & {
+        margin-bottom: 120px;
+
+        @include mobile {
+            margin-bottom: 100px;
+        }
+    }
+
+    .title {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include tablet {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &__text {
+            margin-bottom: 0;
+            text-align: left;
+
+            @include tablet {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__logo-group {
+            @include flex-v-center;
+            gap: 0 40px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 18px 0;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 0 28px;
+
+        @include mobile {
+            gap: 0;
+        }
+    }
+
+    &__item {
+        animation-timing-function: steps(1, end);
+        animation-direction: normal;
+        background-color: $color-white;
+        border-radius: 18px;
+        flex: 0 0 auto;
+        padding: 32px 32px 20px;
+        width: 472px;
+
+        @include tablet {
+            width: 372px;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    @keyframes scrollAnimation {
+        0%, 100% {
+            transform: translateX(0%);
+        }
+        25%, 75% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-200%);
+        }
+    }
+
+    &__info {
+        border-bottom: 1px solid var(--color-light-grey);
+        margin-bottom: 16px;
+        padding-bottom: 18px;
+    }
+
+    &__info,
+    &__info-inner {
+        display: flex;
+    }
+
+    &__picture {
+        @include flex-all-center;
+        @include size(62px);
+        border-radius: 50%;
+        margin-right: 24px;
+
+        &.is-magenta {
+            background-color: var(--color-magenta);
+        }
+
+        &.is-pink {
+            background-color: var(--color-pink);
+        }
+
+        &.is-green {
+            background-color: var(--color-green);
+        }
+    }
+
+    &__name {
+        @include font(var(--typo-1), 20px, var(--fw-semibold));
+        color: $color-black;
+        line-height: 32px;
+    }
+
+    &__category {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-grey);
+        margin-bottom: 18px;
+    }
+
+    &__post {
+        @include flex-all-sb;
+    }
+
+    &__route {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        border-radius: 6px;
+        color: $color-black;
+        padding: 6px 12px;
+
+        &.is-yellow {
+            background-color: rgba(255, 190, 24, 0.20);
+        }
+
+        &.is-blue {
+            background-color: rgba(32, 175, 222, 0.20);
+        }
+
+        &.is-green {
+            background-color: rgba(157, 209, 98, 0.20);
+        }
+    }
+
+    &__date {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-light-grey);
+    }
+
+    &__slider {
+        @include mobile {
+            position: relative;
+        }
+    }
+
+    &__slider-container {
+        @include mobile {
+            height: 100%;
+            overflow-x: hidden;
+            margin: 0 auto;
+            width: 320px;
+        }
+    }
+
+    &__swiper-pagination {
+        bottom: -24px !important;
+        display: none;
+        gap: 4px;
+        left: 50% !important;
+        position: absolute;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        @include size(8px);
+        background-color: var(--color-light-grey);
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-grey);
+        opacity: 1;
+    }
+}

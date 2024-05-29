@@ -1,0 +1,151 @@
+.get-more {
+    margin: 120px 0;
+
+    @include mobile {
+        margin: 100px 0;
+    }
+
+    .title {
+        margin: 0 auto 102px;
+        max-width: 572px;
+
+        @include tablet {
+            max-width: 635px;
+        }
+
+        @include mobile {
+            margin-bottom: 87px;
+            text-align: left;
+        }
+    }
+
+    &__container {
+        position: relative;
+
+        &::before {
+            @include absolute(-9px, null, null, 0);
+            @include size(17px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17' fill='none'%3E%3Ccircle cx='8.5' cy='8.5' r='8.5' fill='%2320AFDE'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+
+            @include tablet {
+                content: none;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 160px;
+        grid-template-columns: repeat(3, 250px);
+        justify-content: center;
+
+        @include tablet {
+            gap: 0 55px;
+            grid-template-columns: repeat(3, 200px);
+        }
+
+        @include mobile {
+            gap: 105px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &::before {
+            @include absolute(-35px, null, null, -25px);
+            @include size(97px);
+            background-color: var(--color-pink);
+            border-radius: 50%;
+            content: '';
+            z-index: -1;
+
+            @include tablet {
+                @include absolute(-30px, null, null, -25px);
+                @include size(63px);
+            }
+
+            @include mobile {
+                @include absolute(-35px, null, null, -25px);
+                @include size(97px);
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                @include absolute(-52px, null, null, -20px);
+                @include size(114px);
+                background-color: var(--color-yellow);
+
+                @include tablet {
+                    @include absolute(-40px, null, null, -25px);
+                    @include size(74px);
+                }
+
+                @include mobile {
+                    @include absolute(-52px, null, null, -20px);
+                    @include size(114px);
+                }
+            }
+        }
+
+        &:last-child {
+            &::before {
+                @include absolute(-74px, null, null, -35px);
+                @include size(136px);
+                background-color: var(--color-green);
+
+                @include tablet {
+                    @include absolute(-55px, null, null, -25px);
+                    @include size(88px);
+                }
+
+                @include mobile {
+                    @include absolute(-74px, null, null, -35px);
+                    @include size(136px);
+                }
+            }
+        }
+    }
+
+    &__percent {
+        @include font(var(--typo-1), 42px, var(--fw-bold));
+        color: $color-black;
+        line-height: 56px;
+        margin-bottom: 8px;
+
+        @include tablet {
+            font-size: 24px;
+            font-weight: var(--fw-semibold);
+            line-height: 34px;
+            margin-bottom: 0;
+        }
+
+        @include mobile {
+            @include font(var(--typo-1), 42px, var(--fw-bold));
+            line-height: 56px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__category {
+        @include font(var(--typo-1), 20px, var(--fw-normal));
+        color: var(--color-grey);
+        line-height: 32px;
+
+        @include tablet {
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        @include mobile {
+            @include font(var(--typo-1), 20px, var(--fw-normal));
+            line-height: 32px;
+        }
+    }
+}

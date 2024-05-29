@@ -1,0 +1,199 @@
+.footer {
+    $this: &;
+    background-color: rgba(175, 178, 178, 0.1);
+    margin-top: -120px;
+    padding-top: 240px;
+
+    @include mobile {
+        margin-top: -280px;
+        padding-top: 400px;
+    }
+
+    &__container {
+        display: grid;
+        gap: 50px 0;
+
+        @include tablet {
+            justify-content: center;
+        }
+
+        @include mobile {
+            gap: 32px 0;
+        }
+    }
+
+    &__row {
+        display: grid;
+        gap: 0 28px;
+        grid-template-columns: 272px 572px 272px;
+
+        @include tablet {
+            grid-template-columns: 372px 272px;
+            grid-template-rows: auto auto;
+
+            &:first-child {
+                #{$this}__column {
+                    &:first-child {
+                        grid-row: 1 / 2;
+                        grid-column: 1 / 3;
+                        margin-bottom: 32px;
+                        width: 272px;
+                    }
+
+                    &:nth-child(2) {
+                        grid-row: 2 / 3;
+                        grid-column: 1 / 2;
+                    }
+
+                    &:last-child {
+                        grid-row: 2 / 3;
+                        grid-column: 2 / 3;
+                        width: 272px;
+                    }
+                }
+            }
+        }
+
+        @include mobile {
+            gap: 32px 0;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            &:first-child {
+                #{$this}__column {
+                    &:first-child {
+                        grid-row: auto;
+                        grid-column: auto;
+                        margin-bottom: 0;
+                        width: 100%;
+                    }
+
+                    &:nth-child(2) {
+                        grid-row: auto;
+                        grid-column: auto;
+                        width: 100%;
+                    }
+
+                    &:last-child {
+                        grid-row: auto;
+                        grid-column: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__column {
+        &.is-empty {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__logo {
+        margin-bottom: 35px;
+    }
+
+    &__teaser {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-grey);
+    }
+
+    &__title {
+        @include font(var(--typo-1), 18px, var(--fw-medium));
+        color: var(--color-light-grey);
+        margin-bottom: 18px;
+    }
+
+    &__list {
+        display: grid;
+        gap: 23px 28px;
+        grid-template-columns: repeat(3, 172px);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 172px);
+        }
+
+        @include sm-mobile {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item-link {
+        @include trs();
+        @include font(var(--typo-1), 16px, var(--fw-normal));
+        color: $color-black;
+
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__title-link {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-grey);
+        margin-bottom: 5px;
+    }
+
+    &__link {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: $color-black;
+
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px 0;
+    }
+
+    &__category {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-grey);
+    }
+
+    &__wrap-pay {
+        display: flex;
+        gap: 0 9px;
+    }
+
+    &__copyright {
+        background-color: rgba(175, 178, 178, 0.3);
+        margin-top: 28px;
+        padding: 8px 0;
+
+        @include mobile {
+            padding: 24px 0;
+        }
+    }
+
+    &__copyright-wrapper {
+        @include flex-all-sb;
+
+        @include mobile {
+            flex-direction: column-reverse;
+            gap: 40px 0;
+        }
+    }
+
+    &__copyright-list {
+        @include flex-v-center;
+        gap: 0 15px;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 18px 0;
+        }
+    }
+
+    &__copyright-text,
+    &__copyright-link {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-grey);
+    }
+}

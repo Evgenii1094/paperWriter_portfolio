@@ -1,0 +1,78 @@
+// base
+@import "config";
+@import "mixins";
+@import "fonts";
+
+// templates
+@import "./templates/container";
+@import "./templates/button";
+@import "./templates/section";
+@import "./templates/title";
+@import "./templates/paragraph";
+@import "./templates/item-title";
+@import "./templates/site-wrapper";
+@import "./templates/navigation";
+@import "templates/auxiliary";
+
+// index.html
+@import "./components/pre-header";
+@import "./components/header";
+@import "./components/header-nav";
+@import "./components/dropdown-menu";
+@import "./components/hero";
+@import "./components/benefits";
+@import "./components/expert";
+@import "./components/side-list";
+@import "./components/review";
+@import "./components/about";
+@import "./components/faq";
+@import "./components/card";
+@import "./components/advantages";
+@import "./components/pre-footer";
+@import "./components/footer";
+
+// price-page.html
+@import "./components/get-more";
+@import "./components/pricing";
+
+// work-page.html
+@import "./components/work";
+@import "./components/choice";
+
+// service-page.html
+@import "./components/service-block";
+@import "./components/profi";
+
+// contact-page.html
+@import "./components/contact-block";
+
+// expert-page.html
+@import "./components/expert-benefit";
+@import "./components/expert-best";
+@import "./components/expert-about";
+
+// error-page.html
+@import "./components/error-block";
+
+// seo-page.html
+@import "./components/seo-hero";
+
+// homepage-form.html
+@import "./components/hero-form";
+
+// blog-page.html
+@import "./components/blog-page";
+@import "./components/post";
+@import "./components/blog-benefits";
+@import "./components/banner";
+@import "./components/news";
+
+// article-page.html
+@import "./components/article";
+@import "./components/article-page";
+@import "./components/navigation";
+@import "./components/article-faq";
+@import "components/article-comment";
+@import "components/article-link";
+@import "components/article-carousel";
+@import "components/article-form";

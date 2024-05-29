@@ -1,0 +1,86 @@
+.contact-block {
+    .title {
+        max-width: 572px;
+        text-align: left;
+
+        @include tablet {
+            max-width: 372px;
+        }
+
+        @include mobile {
+            max-width: none;
+        }
+
+        &__text {
+            display: inline-flex;
+            position: relative;
+            width: max-content;
+
+            &::before {
+                @include absolute(-20px, -45px);
+                @include size(74px, 58px);
+                background: {
+                    image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='58' viewBox='0 0 74 58' fill='none'%3E%3Cpath d='M10.9219 32.0093C19.3051 31.0329 27.777 32.8269 35.0517 37.119C42.3263 41.4111 48.0064 47.9668 51.2298 55.7912' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3Cpath d='M2.09766 15.6925C7.41731 14.9152 25.8048 12.9083 44.3079 24.1206C55.2301 30.7898 63.9196 40.5772 69.2641 52.2297' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3Cpath d='M21.6016 1.57423C31.8459 2.09004 41.8164 5.06957 50.6722 10.2615C59.5279 15.4534 67.0093 22.7054 72.4852 31.4061' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E");
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include mobile {
+                    @include size(43px, 34px);
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='43' height='34' viewBox='0 0 43 34' fill='none'%3E%3Cpath d='M6.9375 19.0308C11.6286 18.4844 16.3693 19.4883 20.44 21.8901C24.5107 24.2918 27.6892 27.9603 29.4929 32.3386' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3Cpath d='M2 9.90027C4.97676 9.46534 15.266 8.34229 25.6199 14.6164C31.7317 18.3484 36.5942 23.8252 39.5848 30.3457' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3Cpath d='M12.9141 2C18.6466 2.28863 24.2258 3.95591 29.1813 6.86119C34.1368 9.76647 38.3232 13.8246 41.3874 18.6932' stroke='%23FF99D0' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 28px;
+        grid-template-columns: repeat(2, 572px);
+
+        @include mobile {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__picture {
+        @include tablet {
+            @include absolute(-30px, 70px);
+            width: 306px;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__info {
+        background-color: $color-white;
+        border-radius: 18px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 220px);
+        gap: 16px 60px;
+        padding: 32px;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 12px, var(--fw-medium));
+        color: var(--color-light-grey);
+    }
+
+    &__link {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: $color-black;
+        line-height: 28px;
+
+        @include on-event {
+            text-decoration: underline;
+        }
+
+        &.is-no-link {
+            @include on-event {
+                text-decoration: none;
+            }
+        }
+    }
+}

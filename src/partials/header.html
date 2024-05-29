@@ -1,0 +1,56 @@
+<header class="header">
+    <div class="header__container container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="../img/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="header__nav">
+                <nav class="header-nav">
+                    <ul class="header-nav__list">
+                        <li class="header-nav__item is-dropdown js-dropdown-menu">
+                            <a href="service.html" class="header-nav__link is-service">
+                                Services
+                                <span class="header-nav__icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="6" height="4" viewBox="0 0 6 4" fill="none">
+                                        <path d="M0.256119 0.925738C0.0669162 0.736962 0.200917 0.414185 0.468491 0.414185H2.87175H5.27501C5.54258 0.414185 5.67658 0.736962 5.48738 0.925737L3.08412 3.32357C2.96683 3.44059 2.77667 3.44059 2.65938 3.32357L0.256119 0.925738Z" fill="#05070A"/>
+                                    </svg>
+                                </span>
+                                <a href="service.html" class="header__hamburger-icon">see all</a>
+                            </a>
+                            @include('dropdown-menu.html')
+                        </li>
+                        <li class="header-nav__item">
+                            <a href="work-page.html" class="header-nav__link">How It Works</a>
+                        </li>
+                        <li class="header-nav__item">
+                            <a href="expert-page.html" class="header-nav__link">The Experts</a>
+                        </li>
+                        <li class="header-nav__item">
+                            <a href="price-page.html" class="header-nav__link">Pricing</a>
+                        </li>
+                        <li class="header-nav__item">
+                            <a href="contact.html" class="header-nav__link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="header-nav__buttons">
+                        <a href="#" class="btn is-no-border">Sign In</a>
+                        <a href="#" class="btn">Order Now</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="header__buttons">
+                <a href="#" class="btn is-no-border">Sign In</a>
+                <a href="#" class="btn is-small">Order Now</a>
+            </div>
+            <div class="header__menu">
+                <div class="header__hamburger">
+                    <span class="header__bar"></span>
+                    <span class="header__bar"></span>
+                    <span class="header__bar"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

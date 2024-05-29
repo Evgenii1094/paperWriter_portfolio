@@ -1,0 +1,50 @@
+.site-wrapper {
+    &.is-fixed {
+        padding-top: 117px;
+    }
+
+    .is-form & {
+        @include tablet {
+            overflow: hidden;
+        }
+    }
+
+    .is-seo-page & {
+        @include mobile {
+            overflow: hidden;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        gap: 0 128px;
+        grid-template-columns: 672px 372px;
+        justify-content: space-between;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 120px 0;
+            grid-template-columns: auto;
+        }
+
+        .is-article-page & {
+            flex-direction: column;
+            margin-top: 52px;
+        }
+    }
+
+    &__content {
+        .is-article-page & {
+            display: flex;
+            flex-direction: column;
+            gap: 120px 0;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 120px 0;
+    }
+}

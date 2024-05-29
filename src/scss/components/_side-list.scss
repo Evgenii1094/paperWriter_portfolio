@@ -1,0 +1,101 @@
+.side-list {
+    $this: &;
+    margin: 145px 0 120px;
+
+    @include tablet {
+        margin: 120px 0 95px;
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border-radius: 18px;
+        padding: 32px;
+
+        @include mobile {
+            padding: 32px 10px 32px 32px;
+        }
+    }
+
+    &__content {
+        @include size(100%);
+        max-height: 580px;
+        overflow-y: auto;
+
+        @include tablet {
+            padding: 0 20px;
+            width: 748px;
+        }
+
+        @include mobile {
+            padding: 0 20px 0 0;
+        }
+
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-grey);
+            border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--color-light-grey);
+        }
+    }
+
+    &__content-wrapper {
+        position: relative;
+
+        @include tablet {
+            @include flex-h-center;
+        }
+
+        &::before {
+            @include absolute(null, null, -1px, 0);
+            @include size(100%, 50px);
+            background: linear-gradient(rgba($color-white, 0), white);
+            content: '';
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    &__inner,
+    &__stub {
+        padding: 0 20px;
+        margin-bottom: 48px;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__banner {
+        @include flex-all-sb;
+        background-color: var(--color-yellow);
+        border-radius: 11px;
+        margin: 32px 0;
+        padding: 38px 40px;
+
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__banner-title {
+        @include font(var(--typo-1), 42px, var(--fw-bold));
+        color: $color-black;
+        line-height: 56px;
+
+        @include mobile {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    }
+}

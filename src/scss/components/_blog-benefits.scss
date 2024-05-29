@@ -1,0 +1,36 @@
+.blog-benefits {
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 52px 0;
+
+        @include tablet {
+            align-items: flex-start;
+            display: grid;
+            gap: 0 28px;
+            grid-template-columns: minmax(245px, 372px) minmax(225px, 372px) minmax(225px, 372px);
+        }
+
+        @include mobile {
+            gap: 52px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &__picture {
+        @include size(120px);
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+    }
+}

@@ -1,0 +1,46 @@
+.article-link {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px 0;
+    }
+
+    &__item {
+        @include flex-all-center;
+        background-color: var(--color-bg);
+        border-radius: 6px;
+        gap: 0 12px;
+        padding: 24px 50px 24px 24px;
+        position: relative;
+    }
+
+    &__link {
+        @include font(var(--typo-1), 16px, var(--fw-bold));
+        @include trs();
+        color: $color-black;
+
+        @include on-event {
+            color: var(--color-magenta);
+        }
+    }
+
+    &__icon {
+        @include size(22px, 14px);
+        @include trs();
+        display: inline-flex;
+        position: relative;
+
+        &::before {
+            @include absolute(0, 0);
+            @include size(22px, 14px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='14' viewBox='0 0 22 14' fill='none'%3E%3Cpath d='M20.9997 7L16.333 13' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M20.9997 6.99995L16.333 1' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M1 7L21 7' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            };
+            content: '';
+
+            .is-left & {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

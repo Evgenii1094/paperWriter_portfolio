@@ -1,0 +1,66 @@
+.article-comment {
+    .title {
+        text-align: left;
+
+        &__text {
+            margin-bottom: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 32px 0;
+        flex-direction: column;
+    }
+
+    &__item {
+        &.is-left {
+            padding-left: 40px;
+        }
+    }
+
+    &__info {
+        @include flex-all-sb;
+        margin-bottom: 8px;
+    }
+
+    &__name {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: $color-black;
+        line-height: 28px;
+    }
+
+    &__date {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: var(--color-light-grey);
+        line-height: 28px;
+    }
+
+    &__paragraph {
+        margin-bottom: 12px;
+    }
+
+    &__reply {
+        @include font(var(--typo-1), 18px, var(--fw-medium));
+        color: $color-black;
+        line-height: 36px;
+        padding-left: 40px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(23px, 14px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='14' viewBox='0 0 23 14' fill='none'%3E%3Cpath d='M21.0785 7L16.4119 13' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M21.0785 6.99995L16.4119 1' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M1.57886 1V1C1.57886 4.31371 4.26515 7 7.57886 7L21.0789 7' stroke='%2305070A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__button {
+        @include flex-h-center;
+        margin-top: 32px;
+    }
+}

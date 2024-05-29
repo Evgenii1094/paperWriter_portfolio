@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@include('partials/head.html')
+
+<body class="is-blog-page">
+<div class="site-container">
+    @include('partials/pre-header.html')
+    @include('partials/header.html')
+    <main class="site-wrapper">
+        <div class="container">
+            <div class="title is-primary">
+                <h2 class="title__text">Blog</h2>
+                <p class="title__text-small">Writing custom essays & research papers since 2008</p>
+            </div>
+        </div>
+        <section class="site-wrapper__inner container">
+            <article class="site-wrapper__content">
+                @include('partials/news.html')
+            </article>
+            <aside class="site-wrapper__sidebar">
+                @include('partials/post.html')
+                @include('partials/blog-benefits.html')
+                @include('partials/banner.html')
+            </aside>
+        </section>
+    </main>
+    @include('partials/pre-footer.html')
+    @include('partials/footer.html')
+</div>
+<div class="overlay"></div>
+</body>
+</html>

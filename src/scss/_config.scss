@@ -1,0 +1,31 @@
+// Colors
+$color-white: #fff;
+$color-black: #05070A;
+
+:root {
+    // Font family
+    --typo-1: 'Plus Jakarta Sans', sans-serif;
+
+    // Color variable
+    --color-blue: #20AFDE;
+    --color-magenta: #FF5674;
+    --color-pink: #FF99D0;
+    --color-green: #9DD162;
+    --color-yellow: #FFBE18;
+    --color-grey: #4A4A4D;
+    --color-light-grey: #AFB2B2;
+    --color-bg: #F7F8FA;
+
+
+    // Font weight
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
+

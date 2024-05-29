@@ -1,0 +1,74 @@
+.btn {
+    @include font(var(--typo-1), 16px, var(--fw-semibold));
+    @include trs;
+    align-items: center;
+    background-color: $color-black;
+    border: 1px solid $color-black;
+    border-radius: 38px;
+    color: $color-white;
+    display: inline-flex;
+    justify-content: center;
+    height: 72px;
+    padding: 21px 60px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    svg {
+        path {
+            @include trs();
+        }
+    }
+
+    @include on-event {
+        background-color: var(--color-grey);
+    }
+
+    &.is-transparent {
+        background-color: inherit;
+        border: 2px solid $color-black;
+        color: $color-black;
+        font-weight: var(--fw-medium);
+
+        @include on-event {
+            background-color: $color-black;
+            color: $color-white;
+
+            svg {
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+    }
+
+    &.is-no-border {
+        background-color: transparent;
+        border: 0;
+        color: $color-black;
+        height: max-content;
+        padding: 0;
+        position: relative;
+
+        &::before {
+            @include trs;
+            @include absolute(null, null, -2px, 0);
+            @include size(0px, 2px);
+            background-color: var(--color-grey);
+            content: '';
+        }
+
+        @include on-event {
+            color: var(--color-grey);
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    &.is-small {
+        height: 52px;
+        padding: 21px 38px;
+    }
+}

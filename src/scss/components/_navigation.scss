@@ -1,0 +1,47 @@
+.navigation {
+    &__list {
+        display: flex;
+
+        @include mobile {
+            flex-wrap: wrap;
+            gap: 6px 0;
+        }
+    }
+
+    &__item {
+        margin-right: 8px;
+        padding-right: 26px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, 0);
+            @include size(17px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewBox='0 0 16 17' fill='none'%3E%3Cpath d='M14.6665 8.5L11.5554 12.5M14.6665 8.5L11.5554 4.5M14.6665 8.5L1.33337 8.5' stroke='%234A4A4D' stroke-width='1.33333' stroke-linecap='round'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+
+        &:last-child {
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    &__link {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        @include trs();
+        color: var(--color-grey);
+
+        &.is-active {
+            color: var(--color-light-grey);
+        }
+
+        @include on-event {
+            color: $color-black;
+        }
+    }
+}

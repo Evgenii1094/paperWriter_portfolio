@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@include('partials/head.html')
+
+<body class="is-article-page">
+<div class="site-container">
+    @include('partials/pre-header.html')
+    @include('partials/header.html')
+    <main class="site-wrapper">
+        <div class="navigation container">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="blog-page.html" class="navigation__link">Blog</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link is-active">
+                        145 Innovative Artificial Intelligence Topics: Original Ideas List
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="site-wrapper__inner container">
+            <article class="site-wrapper__content">
+                @include('partials/article.html')
+                @include('partials/article-faq.html')
+                @include('partials/article-carousel.html')
+                @include('partials/article-link.html')
+                @include('partials/article-comment.html')
+                @include('partials/article-form.html')
+            </article>
+            <aside class="site-wrapper__sidebar">
+                @include('partials/post.html')
+                @include('partials/blog-benefits.html')
+                @include('partials/banner.html')
+            </aside>
+        </section>
+    </main>
+    @include('partials/pre-footer.html')
+    @include('partials/footer.html')
+</div>
+<div class="overlay"></div>
+</body>
+</html>

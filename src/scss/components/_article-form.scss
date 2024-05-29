@@ -1,0 +1,66 @@
+.article-form {
+    .title {
+        margin-bottom: 28px;
+        text-align: left;
+
+        &__text {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+
+        &.is-checkbox {
+            flex-direction: row;
+        }
+    }
+
+    &__label {
+        @include font(var(--typo-1), 12px, var(--fw-medium));
+        color: $color-black;
+        margin-bottom: 6px;
+    }
+
+    &__input,
+    &__area {
+        @include font(var(--typo-1), 16px, var(--fw-normal));
+        border: 1px solid rgba(175, 178, 178, 0.2);
+        border-radius: 12px;
+        color: $color-black;
+        padding: 11px 22px;
+
+        &::placeholder {
+            color: var(--color-light-grey);
+        }
+    }
+
+    &__area {
+        .is-width & {
+            width: 308px;
+        }
+    }
+
+    &__checkbox {
+        @include size(16px);
+        border: 1px solid var(--color-grey);
+        border-radius: 6px;
+    }
+
+    &__checkbox-label {
+        @include font(var(--typo-1), 16px, var(--fw-normal));
+        color: $color-black;
+        margin-left: 10px;
+    }
+
+    &__btn {
+        margin-top: 12px;
+    }
+}

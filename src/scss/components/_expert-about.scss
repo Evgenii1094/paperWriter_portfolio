@@ -1,0 +1,46 @@
+.expert-about {
+    margin: 145px 0 120px;
+
+    .title {
+        margin: 0 auto 52px;
+        max-width: 572px;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 28px;
+        grid-template-columns: repeat(3, 372px);
+
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            grid-template-columns: auto;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        background-color: $color-white;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        padding: 52px 32px 32px;
+
+        @include tablet {
+            max-width: 352px;
+        }
+    }
+
+    &__picture {
+        margin-bottom: 48px;
+
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+}

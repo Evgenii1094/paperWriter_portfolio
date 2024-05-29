@@ -1,0 +1,5 @@
+.paragraph {
+    @include font(var(--typo-1), 18px, var(--fw-normal));
+    color: var(--color-grey);
+    line-height: 29px;
+}
